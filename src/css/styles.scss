@@ -1,0 +1,35 @@
+@import "bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Round');
+
+body {
+  background-color: rgb(25, 35, 45);
+}
+
+.arrow-down {
+  font-size: 2em;
+}
+
+.emoji {
+  font-size: 3em;
+  margin-right: -0.2em;
+}
+
+.logo-text {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 3em;
+  font-weight: 900;
+}
+
+.popup-menu {
+  cursor: pointer;
+}
+
+.text--gradient-hey {
+  background: linear-gradient(90deg, rgb(255, 189, 48) 35%, rgb(255, 134, 107) 100%);
+  background-clip: text;
+  color: rgb(48,113,255);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
