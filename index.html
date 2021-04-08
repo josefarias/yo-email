@@ -4,22 +4,47 @@
 <head>
   <title>Hotwire: Load frames on click</title>
 
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta http-equiv="content-type"
+        content="text/html; charset=utf-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <script src="main.bundle.js"></script>
 </head>
 <body>
-  <div class="container">
+  <nav class="container"
+       aria-label="Main">
     <div class="row">
-      <div class="col-12 d-flex justify-content-center align-items-center">
-        <div class="popup-menu text--gradient-hey">
-          <span class="emoji">&#9996;</span>
-          <span class="logo-text">YO!</span>
-          <span class="arrow-down material-icons-round">expand_more</span>
-        </div>
+      <div class="col-12 d-flex justify-content-center">
+        <details class="popup-menu text--gradient-hey position-relative"
+                 data-controller="popup-menu"
+                 data-action="toggle->popup-menu#update">
+          <summary aria-haspopup="menu"
+                   aria-label="Go to">
+            <span class="emoji">&#9996;</span>
+            <span class="logo-text">YO!</span>
+            <span class="arrow-down material-icons-round flipped"
+                  data-popup-menu-target="arrow">
+                  expand_more
+            </span>
+
+            <a href="/navigation.html"
+               data-turbo-frame="my_navigation"
+               data-popup-menu-target="link">
+               HEY
+            </a>
+          </summary>
+
+          <turbo-frame id="my_navigation"
+                       target="_top"
+                       role="menu"
+                       class="popup-menu position-absolute menu
+                              start-50 overflow-scroll">
+            <span>Loading</span>
+          </turbo-frame>
+        </details>
       </div>
     </div>
-  </div>
+  </nav>
 </body>
 </html>

@@ -2,8 +2,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons+Round');
 
+:root {
+  --font-size-base: 10px;
+}
+
+html {
+  font-size: var(--font-size-base);
+}
+
 body {
   background-color: rgb(25, 35, 45);
+}
+
+summary {
+  list-style: none;
+
+  &:focus {
+    outline: none
+  }
+}
+
+[open] > .popup-menu {
+  animation: pop-open 0.1s both;
 }
 
 .arrow-down {
@@ -21,8 +41,26 @@ body {
   font-weight: 900;
 }
 
+.menu {
+  background-color: rgb(255, 189, 48);
+  border-radius: 1.5em;
+  color: white;
+  margin-left: -22rem;
+  max-height: 85vh;
+  width: 44rem;
+
+  -webkit-text-fill-color: initial;
+
+  &__item {
+    background-color: rgba(255, 255, 255, 0.32);
+    border-radius: 0.8rem;
+    height: 8.7rem;
+  }
+}
+
 .popup-menu {
   cursor: pointer;
+  user-select: none;
 }
 
 .text--gradient-hey {
@@ -32,4 +70,20 @@ body {
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@keyframes pop-open {
+  0% {
+    transform: scale(0.3);
+    opacity: 0
+  }
+
+  75% {
+    transform: scale(1.05);
+    opacity: 1
+  }
+
+  100% {
+    transform: scale(1)
+  }
 }

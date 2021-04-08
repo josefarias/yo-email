@@ -1,4 +1,5 @@
 import * as Turbo from '@hotwired/turbo'
+import regeneratorRuntime from "regenerator-runtime";
 import '../css/styles.scss'
 
 import { Application } from "stimulus"
