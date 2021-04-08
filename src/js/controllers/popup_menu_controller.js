@@ -33,10 +33,6 @@ export default class extends Controller {
     this.arrowTarget.innerHTML = "expand_less"
   }
 
-  displayMenu() {
-    this.element.open = true
-  }
-
   close() {
     this.element.open = false
   }
