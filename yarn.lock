@@ -836,10 +836,16 @@
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.2.tgz#8f03a22a04de437254e8ce8cc84ba39689288752"
   integrity sha512-HyYEUDeIj5rRQU2Hk5HTB2uHsbRQpF70nvMhVzi+VJR0X+xNEhjPui4/kBf3VeH/wqD28PT4sVOm8qqLjBrSZg==
 
-"@hotwired/turbo@^7.0.0-beta.4":
+"@hotwired/turbo@../turbo":
   version "7.0.0-beta.4"
-  resolved "https://registry.yarnpkg.com/@hotwired/turbo/-/turbo-7.0.0-beta.4.tgz#be6d7014902d45121f56358d360e0810bad4c19e"
-  integrity sha512-koox7UeA2Na0tLBPesxNO3nk/gtezRxF33NHKbAx+zv5s2k1Xh/orB5xNr5dAckoUj3Pdpytnw41WH4QB1jYBg==
+
+"@hotwired/turbo@file:":
+  version "0.0.1"
+  dependencies:
+    "@hotwired/turbo" "../turbo"
+    "@popperjs/core" "^2.9.2"
+    bootstrap "^5.0.0-beta3"
+    stimulus "^2.0.0"
 
 "@popperjs/core@^2.9.2":
   version "2.9.2"
