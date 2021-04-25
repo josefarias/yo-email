@@ -53,12 +53,12 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new HtmlWebPackPlugin({
-      template: "./src/views/index.html",
+      template: "./src/server/views/index.html",
       filename: "./index.html",
       favicon: "./src/favicon.ico"
     }),
     new HtmlWebPackPlugin({
-      template: "./src/views/navigation.html",
+      template: "./src/server/views/navigation.html",
       filename: "./navigation.html",
       excludeChunks: ["main"]
     })
