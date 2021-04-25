@@ -8,7 +8,7 @@ module.exports = {
   entry: {
     main: [
       "webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000",
-      "./src/index.js"
+      "./src/server/assets/index.js"
     ]
   },
   output: {
@@ -55,7 +55,7 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "./src/server/views/index.html",
       filename: "./index.html",
-      favicon: "./src/favicon.ico"
+      favicon: "./src/server/assets/favicon.ico"
     }),
     new HtmlWebPackPlugin({
       template: "./src/server/views/navigation.html",
