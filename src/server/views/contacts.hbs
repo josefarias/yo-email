@@ -1,0 +1,11 @@
+<turbo-frame id="contacts">
+  {{#each contacts}}
+    <div role="option"
+         data-name="{{this.name}}"
+         class="search-result p-2 fw-bold d-flex align-items-center">
+      <span class="material-icons-round me-3">account_circle</span>
+      {{this.name}}
+    </div>
+  {{/each}}
+</turbo-frame>
+

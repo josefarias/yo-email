@@ -1,39 +1,95 @@
 <turbo-frame id="my_navigation">
-  <div class="container my-4"
-      role="listbox">
-    <div role="group"
-        aria-label="Boxes"
-        class="row d-flex justify-content-center gx-3">
-      <div class="col-4 p-2" role="option">
-        <div class="menu__item d-flex align-items-center justify-content-center">
-          <span class="material-icons-round">star_rate</span>
+  <div class="container my-4">
+    <div class="row search-form">
+      <form data-controller="form"
+            data-action="input->form#debouncedSubmit"
+            data-turbo-frame="contacts"
+            action="/contacts"
+            accept-charset="UTF-8"
+            data-remote="true"
+            method="get">
+        <label class="d-flex justify-content-center align-items-center">
+          <input type="text"
+                 autocomplete="off"
+                 spellcheck="false"
+                 role="combobox"
+                 aria-controls="navigation_results"
+                 class="input w-100 py-2 pe-4"
+                 maxlength="255"
+                 placeholder="Type to search…"
+                 autofocus="autofocus"
+                 name="q"
+                 required="required"
+                 pattern=".*\w+"
+                 data-controller="filter"
+                 data-filter-attribute-value="data-name"
+                 data-filter-empty-value="navigation_results_empty"
+                 data-filter-empty-class="popup-picker--empty"
+                 data-action="invalid->form#suppressValidationMessage
+                              keydown->form#resetByKeyboard
+                              input->filter#query">
+          <span class="material-icons-round">
+            filter_list
+          </span>
+        </label>
+      </form>
+    </div>
+
+    <div id="navigation_results">
+      <section role="presentation" class="row popup-picker__show-when-empty mt-4">
+        <span id="contacts_empty" class="search-result">
+          <span>No matches found</span>
+        </span>
+      </section>
+
+      <div role="group"
+           aria-label="boxes"
+           class="row d-flex justify-content-center gx-3 mt-3 mb-1">
+        <div class="row">
+          <div class="col p-2" role="option" data-name="favorites">
+            <div class="menu__item d-flex align-items-center justify-content-center flex-column">
+              <span class="material-icons-round mb-1">star_rate</span>
+              <span class="menu__item__title fw-bold">Favorites</span>
+            </div>
+          </div>
+          <div class="col p-2" role="option" data-name="library">
+            <div class="menu__item d-flex align-items-center justify-content-center flex-column">
+              <span class="material-icons-round mb-1">auto_stories</span>
+              <span class="menu__item__title fw-bold">Library</span>
+            </div>
+          </div>
+          <div class="col p-2" role="option" data-name="receipts">
+            <div class="menu__item d-flex align-items-center justify-content-center flex-column">
+              <span class="material-icons-round mb-1">receipt</span>
+              <span class="menu__item__title fw-bold">Receipts</span>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-4 p-2" role="option">
-        <div class="menu__item d-flex align-items-center justify-content-center">
-          <span class="material-icons-round">auto_stories</span>
-        </div>
-      </div>
-      <div class="col-4 p-2" role="option">
-        <div class="menu__item d-flex align-items-center justify-content-center">
-          <span class="material-icons-round">receipt</span>
+
+        <div class="row">
+          <div class="col p-2" role="option" data-name="replies">
+            <div class="menu__item d-flex align-items-center justify-content-center flex-column">
+              <span class="material-icons-round mb-1">reply</span>
+              <span class="menu__item__title fw-bold">Replies</span>
+            </div>
+          </div>
+          <div class="col p-2" role="option" data-name="pins">
+            <div class="menu__item d-flex align-items-center justify-content-center flex-column">
+              <span class="material-icons-round mb-1">push_pin</span>
+              <span class="menu__item__title fw-bold">Pins</span>
+            </div>
+          </div>
+          <div class="col p-2" role="option" data-name="images">
+            <div class="menu__item d-flex align-items-center justify-content-center flex-column">
+              <span class="material-icons-round mb-1">image</span>
+              <span class="menu__item__title fw-bold">Images</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="col-4 p-2" role="option">
-        <div class="menu__item d-flex align-items-center justify-content-center">
-          <span class="material-icons-round">reply</span>
-        </div>
-      </div>
-      <div class="col-4 p-2" role="option">
-        <div class="menu__item d-flex align-items-center justify-content-center">
-          <span class="material-icons-round">push_pin</span>
-        </div>
-      </div>
-      <div class="col-4 p-2" role="option">
-        <div class="menu__item d-flex align-items-center justify-content-center">
-          <span class="material-icons-round">image</span>
-        </div>
+      <div class="row">
+        <turbo-frame id="contacts"></turbo-frame>
       </div>
     </div>
   </div>

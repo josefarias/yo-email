@@ -61,6 +61,11 @@ module.exports = {
       template: "./src/server/views/navigation.html",
       filename: "./navigation.html",
       excludeChunks: ["main"]
+    }),
+    new HtmlWebPackPlugin({
+      template: "./src/server/views/contacts.hbs",
+      filename: "./contacts.hbs",
+      excludeChunks: ["main"]
     })
   ]
 }

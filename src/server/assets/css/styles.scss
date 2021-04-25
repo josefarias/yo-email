@@ -19,7 +19,7 @@ summary {
   list-style: none;
 
   &:focus {
-    outline: none
+    outline: none;
   }
 }
 
@@ -45,6 +45,22 @@ summary {
   margin-right: -0.2em;
 }
 
+.input {
+  background-color: rgba(39, 50, 62, 0.9);
+  border: 1px solid rgba(236, 233, 230, 0.15);
+  border-radius: 2em;
+  color: rgb(236, 233, 230);
+  font-size: 1.6rem;
+
+  &::placeholder {
+    color: rgba(236, 233, 230, 0.60);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
 .logo-text {
   font-family: 'Work Sans', sans-serif;
   font-size: 3em;
@@ -62,13 +78,21 @@ summary {
   -webkit-text-fill-color: initial;
 
   &__item {
-    background-color: rgba(255, 255, 255, 0.32);
+    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 0.8rem;
     color: rgb(27, 39, 51);
     height: 8.7rem;
 
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.32);
+    }
+
+    &__title {
+      font-size: 1.4em;
+    }
+
     .material-icons-round {
-      font-size: 36px !important;
+      font-size: 3.2em;
     }
   }
 }
@@ -76,6 +100,47 @@ summary {
 .popup-menu {
   cursor: pointer;
   user-select: none;
+}
+
+.popup-picker--empty > * {
+  display: none
+}
+
+.popup-picker--empty .popup-picker__show-when-empty {
+  display: block
+}
+
+.popup-picker__show-when-empty {
+  display: none
+}
+
+.search-form {
+  position: relative;
+
+  .material-icons-round {
+    color: rgba(236, 233, 230, 0.60);
+    font-size: 18px;
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+  }
+
+  input {
+    padding-left: 2.4em;
+  }
+}
+
+.search-result {
+  border-radius: 0.8rem;
+  color: rgb(27, 39, 51);
+  font-size: 1.4rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.32);
+  }
 }
 
 .text--gradient-hey {
@@ -100,15 +165,15 @@ summary {
 @keyframes pop-open {
   0% {
     transform: scale(0.3);
-    opacity: 0
+    opacity: 0;
   }
 
   75% {
     transform: scale(1.05);
-    opacity: 1
+    opacity: 1;
   }
 
   100% {
-    transform: scale(1)
+    transform: scale(1);
   }
 }
