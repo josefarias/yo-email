@@ -37,7 +37,11 @@
                        role="menu"
                        class="popup-menu position-absolute menu
                               start-50 overflow-scroll">
-            <span>Loading</span>
+            <span class="u-for-screen-reader" role="menuitem" aria-disabled="true">Loading</span>
+            <!-- Loader from https://loading.io/css/ -->
+            <div class="loader d-flex justify-content-center align-items-center">
+              <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+            </div>
           </turbo-frame>
         </details>
       </div>

@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "build": "rm -rf dist && webpack --config webpack.server.config.js && webpack",
+    "build:server": "rm -rf dist/server.js && webpack --config webpack.server.config.js",
     "start": "node ./dist/server.js"
   },
   "dependencies": {
