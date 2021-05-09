@@ -13,6 +13,9 @@ as bare-bones as possible. We'll see how it goes.
 
 This is modeled following MVC and heavily inspired by Rails.
 
+This is not meant to provide a friendly developer environment. Re-building the
+app might be necessary in unexpected circumstances.
+
 ## Running The App
 1. Install dependencies with yarn or npm
 1. Build with `npm run build`
