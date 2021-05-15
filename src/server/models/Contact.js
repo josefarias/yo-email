@@ -1,4 +1,4 @@
-import allContacts from "./ContactDB"
+import allContacts from "../db/contacts"
 
 export class Contact {
   static search(query) {
