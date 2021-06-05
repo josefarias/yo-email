@@ -4,8 +4,9 @@ export default class extends Controller {
   static targets = ["arrow", "link"]
 
   initialize() {
-    if (this.hasLinkTarget)
+    if (this.hasLinkTarget) {
       this.linkTarget.hidden = true
+    }
   }
 
   connect() {
@@ -20,14 +21,15 @@ export default class extends Controller {
   async update() {
     this.arrowTarget.innerHTML = "expand_more"
 
-    if (!this.element.open)
-      return
+    if (!this.element.open) return
 
-    if (this.hasLinkTarget)
+    if (this.hasLinkTarget) {
       this.linkTarget.click()
+    }
 
-    if (this.frameElement)
+    if (this.frameElement) {
       await this.frameElement.loaded
+    }
 
     this.summaryElement?.setAttribute("aria-expanded", this.element.open)
     this.arrowTarget.innerHTML = "expand_less"

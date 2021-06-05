@@ -16,7 +16,10 @@ export default class extends Controller {
 
   submit(event) {
     const form = event.target.form || event.target.closest("form")
-    if (form) form.requestSubmit()
+
+    if (form) {
+      form.requestSubmit()
+    }
   }
 
   debouncedSubmit(event) {
@@ -24,7 +27,9 @@ export default class extends Controller {
   }
 
   resetByKeyboard({ key, target }) {
-    if (key == "Escape") target.value ? resetInput(target) : target.form?.reset()
+    if (key == "Escape") {
+      target.value ? resetInput(target) : target.form?.reset()
+    }
   }
 
   suppressValidationMessage(event) {

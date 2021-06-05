@@ -5,13 +5,12 @@ import { Middleware } from "./Middleware"
 import { Router } from "./Router"
 import { Templating } from "./Templating"
 
-const APP = express()
-const WEBPACK_CONFIG = webpackConfig
-const COMPILER = webpack(WEBPACK_CONFIG)
-const PORT = process.env.PORT || 8080
+const app = express()
+const compiler = webpack(webpackConfig)
+const port = process.env.port || 8080
 
-new Templating(APP).start()
-new Middleware(APP, COMPILER, WEBPACK_CONFIG).start()
-new Router(APP, COMPILER).start()
+new Templating(app).start()
+new Middleware(app, compiler, webpackConfig.output.publicPath).start()
+new Router(app, compiler).start()
 
-APP.listen(PORT, () => console.log(`App listening at http://localhost:${PORT}`))
+app.listen(port, () => console.log(`App listening at http://localhost:${port}`))

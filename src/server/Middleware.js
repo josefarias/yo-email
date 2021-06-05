@@ -2,14 +2,14 @@ import webpackDevMiddleware from "webpack-dev-middleware"
 import webpackHotMiddleware from "webpack-hot-middleware"
 
 export class Middleware {
-  constructor(app, compiler, webpackConfig) {
+  constructor(app, compiler, publicPath) {
     this.app = app
     this.compiler = compiler
-    this.webpackConfig = webpackConfig
+    this.publicPath = publicPath
   }
 
   start() {
-    const publicPath = this.webpackConfig.output.publicPath
+    const publicPath = this.publicPath
 
     this.app.use(webpackDevMiddleware(this.compiler, { publicPath }))
     this.app.use(webpackHotMiddleware(this.compiler))

@@ -46,7 +46,9 @@ export default class extends Controller {
       callback.call(this, mutations)
     })
     function start() {
-      if (target.isConnected) observer.observe(target, options)
+      if (target.isConnected) {
+        observer.observe(target, options)
+      }
     }
     start()
   }
@@ -56,7 +58,9 @@ export default class extends Controller {
 
     this.optionElements.forEach(applyFilter(query, { matching: this.attributeValue }))
 
-    if (this.hasEmptyClass) this.listboxElement.classList.toggle(this.emptyClass, this.isEmpty)
+    if (this.hasEmptyClass) {
+      this.listboxElement.classList.toggle(this.emptyClass, this.isEmpty)
+    }
 
     if (this.hasEmptyValue) {
       const update = this.isEmpty ? addToken : removeToken

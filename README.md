@@ -17,7 +17,7 @@ This is not meant to provide a friendly developer environment. Re-building the
 app might be necessary in unexpected circumstances.
 
 ## Running The App
-1. Install dependencies with yarn or npm
-1. Build with `npm run build`
-1. Start server with `npm run start`
+1. Install dependencies
+1. Build with `yarn build`
+1. Start server with `yarn start`
 1. Navigate to [http://localhost:8080/](http://localhost:8080/)
